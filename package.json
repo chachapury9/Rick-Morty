@@ -1,0 +1,19 @@
+{
+  "name": "rick-morty",
+  "version": "1.0.0",
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/chachapury9/Rick-Morty/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chachapury9/Rick-Morty.git"
+  },
+  "license": "ISC",
+  "author": "JaSON inc.",
+  "type": "module",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./"
+  }
+}
