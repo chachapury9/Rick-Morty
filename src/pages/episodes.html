@@ -7,6 +7,26 @@
   </head>
   <body>
     <script type="module" src="../js/episodes.js"></script>
-    <section id="episodes"></section>
+    <section id="episodes">
+      <form id="episode-filter" action="">
+        <label for="episodeName" class="episode-filter-label">Name</label>
+        <input
+          type="text"
+          name="episodeName"
+          placeholder="Enter name"
+          data-filter="name"
+          class="episode-input" />
+        <label for="season" class="episode-filter-label">Season</label>
+        <select name="season" data-filter="season">
+          <option value="1">Season 1</option>
+          <option value="2">Season 2</option>
+          <option value="3">Season 3</option>
+          <option value="4">Season 4</option>
+          <option value="5">Season 5</option>
+        </select>
+      </form>
+      <div id="episode-wrapper"></div>
+      <button id="load-more-episodes">Load more</button>
+    </section>
   </body>
 </html>
