@@ -23,17 +23,20 @@ form.addEventListener("input", (e) => {
         const createEpisode = Handlebars.compile(episode);
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
-      })
-      .catch((error) => {
-        const errorMarkUp = `<div class="error">
+        if (data.error) {
+          container.innerHTML = `<div class="error">
         <img
           class="error-img"
-          src="../img/kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5 2.png"
-          alt="" />
+          src="/rick-and-morty.8486bf54.png"
+          alt="rick and morty" 
+          />
+          
         <h2 class="error-title">Oops! Try looking for something else...</h2>
       </div>`;
-
-        container.innerHTML = errorMarkUp;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   } else if (e.target.dataset.filter === "season") {
     e.preventDefault();
@@ -47,13 +50,7 @@ form.addEventListener("input", (e) => {
         container.innerHTML = markUp;
       })
       .catch((error) => {
-        const errorMarkUp = `<div class="error">
-        <img
-          class="error-img"
-          src="../img/kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5 2.png"
-          alt="" />
-        <h2 class="error-title">Oops! Try looking for something else...</h2>
-      </div>`;
+        console.log(error);
       });
   }
 });
@@ -78,7 +75,7 @@ function loadMore(event) {
       const errorMarkUp = `<div class="error">
         <img
           class="error-img"
-          src="../img/kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5 2.png"
+          src="../images/kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5 2.png"
           alt="" />
         <h2 class="error-title">Oops! Try looking for something else...</h2>
       </div>`;
