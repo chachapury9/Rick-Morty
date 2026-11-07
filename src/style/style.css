@@ -1,0 +1,59 @@
+:root {
+  --color-text-primary: #fafafa;
+  --color-text-privacy: rgba(250, 250, 250, 0.4);
+  --color-text-secondary: #111111;
+  --color-title-episode: #a1d737;
+  --color-text-episode: rgba(250, 250, 250, 0.5);
+  --color-border: rgba(250, 250, 250, 0.15);
+  --color-background: #0D171D;
+}
+
+.footer {
+  padding-top: 96px;
+  padding-bottom: 16px;
+  background-color: var(--color-background);
+}
+
+.footer__social-container {
+  display: flex;
+}
+
+.footer__page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 128px;
+  margin-left: 331px;
+  margin-right: 252px;
+}
+
+.footer__page-link {
+  color: var(--color-text-primary);
+  font-size: 18px;
+}
+
+.footer__social-link {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.facebook {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 22px;
+  padding-right: 21px;
+}
+
+.twitter {
+  padding: 14px;
+}
+
+.instagram {
+  padding: 15px;
+}
+
+.footer-privacy {
+  color: var(--color-text-privacy);
+  font-size: 18px;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+button {
+  outline: 0;
+  border: 0;
+  font-weight: inherit;
+}
+ul {
+  list-style: none;
+}
+.address {
+  font-style: normal;
+}
+
+input,
+textarea {
+  border: 0;
+  outline: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
