@@ -1,0 +1,9 @@
+:root {
+  --color-text-primary: #fafafa;
+  --color-text-privacy: rgba(250, 250, 250, 0.4);
+  --color-text-secondary: #111111;
+  --color-title-episode: #a1d737;
+  --color-text-episode: rgba(250, 250, 250, 0.5);
+  --color-border: rgba(250, 250, 250, 0.15);
+  --color-background: #0d171d;
+}
