@@ -1,0 +1,8 @@
+@import "./global/common.css";
+@import "./utils/variables.css";
+@import "./global/reset.css";
+@import "./global/base.css";
+@import "./global/container.css";
+
+/* наші стилі */
+@import "./components/header.css";
