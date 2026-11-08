@@ -1,0 +1,34 @@
+.main-characters {
+  margin-bottom: 128px;
+  margin-top: 128px;
+}
+
+#character {
+  padding: 35px 70px;
+  background-color: var(--color-title-episode);
+  border-radius: 100px;
+}
+
+.characters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.character-wrap {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 101px;
+}
+
+#character-name {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+#character-name:hover {
+  cursor: pointer;
+  color: var(--color-title-episode);
+}
