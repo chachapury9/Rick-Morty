@@ -1,3 +1,11 @@
+@import "./global/common.css";
+@import "./utils/variables.css";
+@import "./global/reset.css";
+@import "./global/base.css";
+@import "./global/container.css";
+
+/* наші стилі */
+@import "./components/header.css";
 :root {
   --color-text-primary: #fafafa;
   --color-text-privacy: rgba(250, 250, 250, 0.4);
