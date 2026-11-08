@@ -8,12 +8,61 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/global/reset.css" />
     <link rel="stylesheet" href="./style/global/base.css" />
+    <link rel="stylesheet" href="./style/components/main-characters.css" />
   </head>
   <body>
     <include src="./partials/header.html"></include>
-
-    <a href="./pages/episodes.html">pages</a>
+    <main>
+      <section class="container main-characters">
+        <h2 class="title"><span>Main</span>characters</h2>
+        <div class="character-wrap">
+          <img src="./images/rick.png" alt="just Rick" id="character" />
+          <ul class="characters-list" id="character-list">
+            <li class="character-item" data-char="rick">
+              <p id="character-name">Rick Sanchez</p>
+              <p id="character-info">
+                Rick Sanchez is a brilliant but deeply troubled scientist and
+                one of the main characters in the animated TV show Rick and
+                Morty.
+              </p>
+            </li>
+            <li class="character-item" data-char="morty">
+              <p id="character-name">Morty Smith</p>
+              <p id="character-info">
+                Morty Smith is the other main character in the animated TV show
+                Rick and Morty, and Rick's grandson.
+              </p>
+            </li>
+            <li class="character-item" data-char="summer">
+              <p id="character-name">Summer Smith</p>
+              <p id="character-info">
+                Summer Smith is Morty's older sister and one of the main
+                characters in Rick and Morty. Initially portrayed as a typical
+                teenager, she develops into a more complex and independent
+                character, who is intelligent, resourceful, and fiercely loyal
+                to her family.
+              </p>
+            </li>
+            <li class="character-item" data-char="beth">
+              <p id="character-name">Beth Smith</p>
+              <p id="character-info">
+                Beth is a horse surgeon, and, as Rick's daughter, she is
+                intelligent if sometimes cold. She is voiced by Sarah Chalke.
+              </p>
+            </li>
+            <li class="character-item" data-char="jerry">
+              <p id="character-name">Jerry Smith</p>
+              <p id="character-info">
+                Jerry is the husband of Beth Smith, the father of Summer Smith
+                and Morty Smith, and the son-in-law of Rick Sanchez.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
     <include src="./partials/footer.html"></include>
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/mainCharacters.js"></script>
   </body>
 </html>

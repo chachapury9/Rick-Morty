@@ -3,3 +3,17 @@
   max-width: 1214px;
   padding-inline: 15px;
 }
+
+.title {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 64px;
+}
+
+.title > span {
+  margin-right: 15px;
+  background-color: black;
+  padding: 4px 17px;
+  border-radius: 44px;
+  color: white;
+}

@@ -1,4 +1,4 @@
-import { getData, getDataList } from "./api/getEpisodes";
+import { getData } from "./api/getEpisodes";
 import Handlebars from "handlebars";
 import episode from "bundle-text:../templates/episode.hbs";
 
