@@ -1,6 +1,9 @@
 import { getData } from "./api/getEpisodes";
 import Handlebars from "handlebars";
 import episode from "bundle-text:../templates/episode.hbs";
+import { modalSettings } from "./modal";
+import "basicLightbox/dist/basicLightbox.min.css";
+import * as basicLightbox from "basiclightbox";
 
 const BASE_URL = "https://rickandmortyapi.com/api/episode";
 const container = document.getElementById("episode-wrapper");
@@ -87,3 +90,31 @@ function loadMore(event) {
 loadMoreBtn.addEventListener("click", (e) => {
   loadMore(e);
 });
+
+const modal = modalSettings.element();
+
+function handleShowSettings(e) {
+  const targetId = e.target.closest("[data-id]").dataset.id;
+  modalSettings.show();
+  console.log(targetId);
+  getData(`${BASE_URL}/${targetId}`)
+    .then((data) => {
+      modal.querySelector("#modal-id").textContent = data.id;
+      modal.querySelector("#modal-air-date").textContent = data.air_date;
+      const charList = modal.querySelector("#modal-characters");
+      charList.innerHTML = "";
+      data.characters.forEach((item) => {
+        getData(item).then((data) => {
+          const markUp = `<li class="modal-character">
+        <p class="modal-char-name">${data.name}</p>
+      </li>`;
+          charList.insertAdjacentHTML("beforeend", markUp);
+        });
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+container.addEventListener("click", handleShowSettings);
