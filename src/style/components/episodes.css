@@ -1,0 +1,199 @@
+#episodeName {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.episode-input {
+  font-family: "Montserrat";
+  padding: 16px 24px;
+  font-size: 16px;
+  background-color: var(--color-title-episode);
+  border-radius: 100px;
+  border: 1.5px solid black;
+  color: black;
+  line-height: 18px;
+}
+
+.episode-filter-label {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#episode-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.episode-filter-select {
+  font-family: "Montserrat";
+  padding: 16px 24px;
+  font-size: 16px;
+  border-radius: 100px;
+  border: 1.5px solid black;
+  color: black;
+}
+
+.episode-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.episode-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-title-episode);
+}
+
+#episode-item {
+  width: 284px;
+  height: 200px;
+  border: 2px solid var(--color-title-episode);
+  border-radius: 18px;
+  padding: 20px;
+  background-image: url("/src/images/season1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #0d171d;
+  display: flex;
+  flex-direction: column;
+  gap: 106px;
+  justify-content: center;
+}
+
+.episode-info {
+  display: flex;
+  gap: 17px;
+}
+
+#episode-label-text {
+  font-weight: 400;
+  font-size: 12px;
+  color: #fafafa80;
+}
+
+#episode-text {
+  margin-top: 4px;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#load-more-episodes {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0d171d;
+  background-color: var(--color-title-episode);
+  padding: 12px 24px;
+  border-radius: 1000px;
+}
+
+.button-container {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+#load-more-episodes:disabled {
+  background-color: gainsboro;
+}
+
+.episode-list {
+  margin-bottom: 32px;
+}
+
+.modal {
+  background-color: #0d171d;
+  width: 673px;
+  height: 370px;
+  border-radius: 2px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+}
+
+#modal-title {
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.char-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+#modal-wrapper {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.modal-info {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.modal-text {
+  font-weight: 400;
+  font-size: 12px;
+  color: #fafafa80;
+}
+
+#modal-id,
+#modal-air-date {
+  margin-top: 4px;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#modal-characters {
+  margin-top: 8px;
+  display: flex;
+  gap: 32px;
+}
+
+.modal-character {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.modal-char-name {
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.centered-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid var(--color-title-episode);
+  border-radius: 18px;
+  padding: 32px;
+}
+
+.centered-error {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
