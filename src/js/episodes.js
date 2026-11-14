@@ -27,15 +27,17 @@ form.addEventListener("input", (e) => {
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
         if (data.error) {
-          container.innerHTML = `<div class="error">
-        <img
-          class="error-img"
-          src="/rick-and-morty.8486bf54.png"
-          alt="rick and morty" 
-          />
+          container.innerHTML = `<div class="centered-error">
+              <div class="error">
+            <img
+              class="error-img"
+              src="/rick-and-morty.8486bf54.png"
+              alt="rick and morty" 
+              />
           
-        <h2 class="error-title">Oops! Try looking for something else...</h2>
-      </div>`;
+            <h2 class="error-title">Oops! Try looking for something else...</h2>
+          </div>
+        </div>`;
         }
       })
       .catch((error) => {
@@ -101,11 +103,19 @@ function handleShowSettings(e) {
     .then((data) => {
       modal.querySelector("#modal-id").textContent = data.id;
       modal.querySelector("#modal-air-date").textContent = data.air_date;
+      modal.querySelector("#modal-title").textContent = data.name;
       const charList = modal.querySelector("#modal-characters");
       charList.innerHTML = "";
-      data.characters.forEach((item) => {
+      let index = 0;
+
+      data.characters.some((item) => {
+        if (index > 3) {
+          return true;
+        }
+        index++;
         getData(item).then((data) => {
           const markUp = `<li class="modal-character">
+          <img src=${data.image} class="char-img"/>
         <p class="modal-char-name">${data.name}</p>
       </li>`;
           charList.insertAdjacentHTML("beforeend", markUp);
