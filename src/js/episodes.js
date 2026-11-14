@@ -1,6 +1,9 @@
 import { getData } from "./api/getEpisodes";
 import Handlebars from "handlebars";
 import episode from "bundle-text:../templates/episode.hbs";
+import { modalSettings } from "./modal";
+import "basicLightbox/dist/basicLightbox.min.css";
+import * as basicLightbox from "basiclightbox";
 
 const BASE_URL = "https://rickandmortyapi.com/api/episode";
 const container = document.getElementById("episode-wrapper");
@@ -24,15 +27,17 @@ form.addEventListener("input", (e) => {
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
         if (data.error) {
-          container.innerHTML = `<div class="error">
-        <img
-          class="error-img"
-          src="/rick-and-morty.8486bf54.png"
-          alt="rick and morty" 
-          />
+          container.innerHTML = `<div class="centered-error">
+              <div class="error">
+            <img
+              class="error-img"
+              src="/rick-and-morty.8486bf54.png"
+              alt="rick and morty" 
+              />
           
-        <h2 class="error-title">Oops! Try looking for something else...</h2>
-      </div>`;
+            <h2 class="error-title">Oops! Try looking for something else...</h2>
+          </div>
+        </div>`;
         }
       })
       .catch((error) => {
@@ -87,3 +92,39 @@ function loadMore(event) {
 loadMoreBtn.addEventListener("click", (e) => {
   loadMore(e);
 });
+
+const modal = modalSettings.element();
+
+function handleShowSettings(e) {
+  const targetId = e.target.closest("[data-id]").dataset.id;
+  modalSettings.show();
+  console.log(targetId);
+  getData(`${BASE_URL}/${targetId}`)
+    .then((data) => {
+      modal.querySelector("#modal-id").textContent = data.id;
+      modal.querySelector("#modal-air-date").textContent = data.air_date;
+      modal.querySelector("#modal-title").textContent = data.name;
+      const charList = modal.querySelector("#modal-characters");
+      charList.innerHTML = "";
+      let index = 0;
+
+      data.characters.some((item) => {
+        if (index > 3) {
+          return true;
+        }
+        index++;
+        getData(item).then((data) => {
+          const markUp = `<li class="modal-character">
+          <img src=${data.image} class="char-img"/>
+        <p class="modal-char-name">${data.name}</p>
+      </li>`;
+          charList.insertAdjacentHTML("beforeend", markUp);
+        });
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+container.addEventListener("click", handleShowSettings);
