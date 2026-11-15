@@ -9,10 +9,10 @@ const BASE_URL = "https://rickandmortyapi.com/api/episode";
 const container = document.getElementById("episode-wrapper");
 const form = document.getElementById("episode-filter");
 const loadMoreBtn = document.getElementById("load-more-episodes");
+const episodeItem = document.getElementById("episode-item");
 
 getData(BASE_URL).then((data) => {
   const createEpisode = Handlebars.compile(episode);
-
   const markUp = createEpisode(data);
   container.insertAdjacentHTML("beforeend", markUp);
 });
