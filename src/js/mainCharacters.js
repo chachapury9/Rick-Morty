@@ -10,39 +10,60 @@ const jerryImg = "./jerry.8705314c.png";
 list.addEventListener("click", (e) => {
   console.log("worked");
   const target = e.target.closest("[data-char]");
+
+  let currentImageSrc = rickImg;
+  let currentBackgroundColor = "#A1D737";
+  let currentPadding = "32px 70px";
+  let currentWidth = 365;
+  let currentHeight = 579;
+
   if (target.dataset.char === "rick") {
-    img.width = "365";
-    img.height = "579";
-    img.style.padding = "32px 70px";
-    img.style.backgroundColor = "#A1D737";
-    img.src = rickImg;
+    currentWidth = 365;
+    currentHeight = 579;
+    currentPadding = "32px 70px";
+    currentImageSrc = rickImg;
+    currentBackgroundColor = "#A1D737";
   } else if (target.dataset.char === "morty") {
-    img.style.backgroundColor = "#0D171D";
-    img.style.padding = "41px 42px";
-    img.width = "428";
-    img.height = "550";
-    img.src = mortyImg;
+    currentPadding = "41px 42px";
+    currentWidth = 428;
+    currentHeight = 550;
+    currentBackgroundColor = "#0D171D";
+    currentImageSrc = mortyImg;
     console.log("worked");
   } else if (target.dataset.char === "summer") {
-    img.style.backgroundColor = "#DAF836";
-    img.style.padding = "43px 175px";
-    img.width = "152";
-    img.height = "560";
-    img.src = summerImg;
+    currentPadding = "43px 175px";
+    currentWidth = 152;
+    currentHeight = 560;
+
+    currentBackgroundColor = "#DAF836";
+    currentImageSrc = summerImg;
+
     console.log("worked");
   } else if (target.dataset.char === "beth") {
-    img.style.backgroundColor = "#A1D737";
-    img.style.padding = "53px 176px";
-    img.width = "150";
-    img.height = "537";
-    img.src = bethImg;
+    currentPadding = "53px 176px";
+    currentWidth = 150;
+    currentHeight = 537;
+    currentBackgroundColor = "#A1D737";
+    currentImageSrc = bethImg;
+
     console.log("worked");
   } else if (target.dataset.char === "jerry") {
-    img.style.backgroundColor = "#0D171D";
-    img.style.padding = "53px 177px";
-    img.width = "148";
-    img.height = "537";
-    img.src = jerryImg;
+    currentPadding = "53px 177px";
+    currentWidth = 148;
+    currentHeight = 537;
+
+    currentBackgroundColor = "#0D171D";
+    currentImageSrc = jerryImg;
+
     console.log("worked");
   }
+  img.classList.add("fade");
+  setTimeout(() => {
+    img.width = currentWidth;
+    img.height = currentHeight;
+    img.style.padding = currentPadding;
+    img.style.backgroundColor = currentBackgroundColor;
+    img.src = currentImageSrc;
+    img.classList.remove("fade");
+  }, 300);
 });
