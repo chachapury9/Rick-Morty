@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../style/global/container.css" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/global/reset.css" />
@@ -18,6 +19,22 @@
   <body>
     <section id="episodes" class="container">
       <form id="episode-filter" action="">
+        <label for="episodeName" class="episode-filter-label">Name</label>
+        <input
+          type="text"
+          name="episodeName"
+          placeholder="Enter name"
+          data-filter="name"
+          class="episode-input"
+        />
+        <label for="season" class="episode-filter-label">Season</label>
+        <select name="season" data-filter="season">
+          <option value="1">Season 1</option>
+          <option value="2">Season 2</option>
+          <option value="3">Season 3</option>
+          <option value="4">Season 4</option>
+          <option value="5">Season 5</option>
+        </select>
         <div class="filter-wrap">
           <label for="episodeName" class="episode-filter-label">Name</label>
           <input
@@ -48,5 +65,6 @@
 
       <script type="module" src="../js/episodes.js"></script>
     </section>
+    <include src="./partials/footer.html"></include>
   </body>
 </html>
