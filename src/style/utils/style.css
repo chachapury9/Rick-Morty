@@ -1,7 +1,7 @@
 @import "../global/container.css";
 @import "../components/header.css";
+@import "../components/episodes-banner.css";
 
-/* FOOTER */
 .footer {
   padding-top: 96px;
   padding-bottom: 16px;

@@ -2,8 +2,8 @@ import { getData } from "./api/getEpisodes";
 import Handlebars from "handlebars";
 import episode from "bundle-text:../templates/episode.hbs";
 import { modalSettings } from "./modal";
-import "basicLightbox/dist/basicLightbox.min.css";
-import * as basicLightbox from "basiclightbox";
+// import "basicLightbox/dist/basicLightbox.min.css";
+// import * as basicLightbox from "basiclightbox";
 
 const BASE_URL = "https://rickandmortyapi.com/api/episode";
 const container = document.getElementById("episode-wrapper");
