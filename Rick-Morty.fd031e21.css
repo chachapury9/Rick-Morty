@@ -1,0 +1,2 @@
+.main-characters{margin-top:128px;margin-bottom:128px}#character{opacity:1;background-color:var(--color-title-episode);border-radius:100px;padding:35px 70px;transition:opacity .3s ease-out}.characters-list{flex-direction:column;gap:48px;display:flex}.character-wrap{justify-content:end;align-items:center;gap:101px;display:flex}#character-name{margin-bottom:16px;font-size:24px;font-weight:600}#character-name:hover{cursor:pointer;color:var(--color-title-episode)}#character.fade{opacity:0}
+/*# sourceMappingURL=Rick-Morty.fd031e21.css.map */
