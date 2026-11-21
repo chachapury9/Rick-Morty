@@ -2,17 +2,21 @@ import { getData } from "./api/getEpisodes";
 import Handlebars from "handlebars";
 import episode from "bundle-text:../templates/episode.hbs";
 import { modalSettings } from "./modal";
-// import "basicLightbox/dist/basicLightbox.min.css";
-// import * as basicLightbox from "basiclightbox";
+import "basiclightbox/dist/basicLightbox.min.css";
+import * as basicLightbox from "basiclightbox";
 
 const BASE_URL = "https://rickandmortyapi.com/api/episode";
 const container = document.getElementById("episode-wrapper");
 const form = document.getElementById("episode-filter");
 const loadMoreBtn = document.getElementById("load-more-episodes");
+const episodeItem = document.getElementById("episode-item");
 
 getData(BASE_URL).then((data) => {
+  data.results.forEach((item) => {
+    item.episode = item.episode.slice(0, -3);
+    console.log(item);
+  });
   const createEpisode = Handlebars.compile(episode);
-
   const markUp = createEpisode(data);
   container.insertAdjacentHTML("beforeend", markUp);
 });
@@ -23,19 +27,25 @@ form.addEventListener("input", (e) => {
     container.innerHTML = "";
     getData(`${BASE_URL}?name=${form.episodeName.value}`)
       .then((data) => {
+        data.results.forEach((item) => {
+          item.episode = item.episode.slice(0, -3);
+          console.log(item);
+        });
         const createEpisode = Handlebars.compile(episode);
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
         if (data.error) {
-          container.innerHTML = `<div class="error">
-        <img
-          class="error-img"
-          src="/rick-and-morty.8486bf54.png"
-          alt="rick and morty" 
-          />
+          container.innerHTML = `<div class="centered-error">
+              <div class="error">
+            <img
+              class="error-img"
+              src="/rick-and-morty.8486bf54.png"
+              alt="rick and morty" 
+              />
           
-        <h2 class="error-title">Oops! Try looking for something else...</h2>
-      </div>`;
+            <h2 class="error-title">Oops! Try looking for something else...</h2>
+          </div>
+        </div>`;
         }
       })
       .catch((error) => {
@@ -48,6 +58,10 @@ form.addEventListener("input", (e) => {
       `${BASE_URL}?episode=s0${form.season.value}&${form.episodeName.value}`,
     )
       .then((data) => {
+        data.results.forEach((item) => {
+          item.episode = item.episode.slice(0, -3);
+          console.log(item);
+        });
         const createEpisode = Handlebars.compile(episode);
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
@@ -70,6 +84,10 @@ function loadMore(event) {
 
   getData(`${BASE_URL}?page=${currentPage}`)
     .then((data) => {
+      data.results.forEach((item) => {
+        item.episode = item.episode.slice(0, -3);
+        console.log(item);
+      });
       const createEpisode = Handlebars.compile(episode);
       const markUp = createEpisode(data);
       container.insertAdjacentHTML("beforeend", markUp);
@@ -101,11 +119,19 @@ function handleShowSettings(e) {
     .then((data) => {
       modal.querySelector("#modal-id").textContent = data.id;
       modal.querySelector("#modal-air-date").textContent = data.air_date;
+      modal.querySelector("#modal-title").textContent = data.name;
       const charList = modal.querySelector("#modal-characters");
       charList.innerHTML = "";
-      data.characters.forEach((item) => {
+      let index = 0;
+
+      data.characters.some((item) => {
+        if (index > 3) {
+          return true;
+        }
+        index++;
         getData(item).then((data) => {
           const markUp = `<li class="modal-character">
+          <img src=${data.image} class="char-img"/>
         <p class="modal-char-name">${data.name}</p>
       </li>`;
           charList.insertAdjacentHTML("beforeend", markUp);

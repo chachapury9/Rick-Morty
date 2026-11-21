@@ -6,7 +6,8 @@ h5,
 h6,
 p,
 ul,
-ol {
+ol,
+body {
   margin: 0;
   padding: 0;
 }

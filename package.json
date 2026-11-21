@@ -17,6 +17,7 @@
     "build": "parcel build src/index.html --public-url ./"
   },
   "dependencies": {
+    "bxslider": "^4.2.17",
     "handlebars": "^4.7.10"
   },
   "devDependencies": {

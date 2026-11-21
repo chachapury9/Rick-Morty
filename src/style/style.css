@@ -7,3 +7,4 @@
 /* наші стилі */
 @import "./components/header.css";
 @import "./components/episodes-banner.css";
+@import "./components/footer.css";

@@ -1,7 +1,26 @@
 .container {
   margin-inline: auto;
-  max-width: 1214px;
   padding-inline: 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
 
 .title {
