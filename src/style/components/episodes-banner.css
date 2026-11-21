@@ -1,0 +1,66 @@
+.eps-banner,
+.banner-container {
+  background-color: var(--color-background);
+  border-radius: 100px;
+  width: 1442px;
+  height: 744px;
+
+  margin-inline: auto;
+}
+
+.banner-list {
+  display: flex;
+  gap: 24px;
+}
+
+.episode {
+  width: 278px;
+  height: 314px;
+}
+
+.episode-5 {
+  width: 234px;
+}
+
+.banner-info {
+  color: var(--color-text-primary);
+  font-size: 44px;
+  line-height: 48px;
+  padding-top: 100px;
+  padding-left: 128px;
+  min-width: 610px;
+  max-height: 96px;
+}
+
+.banner-span {
+  background-color: var(--color-title-episode);
+  border-radius: 35px;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+
+.banner-span:hover {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-text-primary);
+}
+
+.banner-list {
+  margin-top: 64px;
+}
+
+.banner-btn {
+  display: block;
+  margin-left: auto;
+  margin-top: 32px;
+  margin-right: 128px;
+  background-color: var(--color-title-episode);
+  padding: 12px 24px;
+  border-radius: 1000px;
+  transition: 0.3s ease;
+}
+
+.banner-btn:hover {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+}
