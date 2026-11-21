@@ -8,11 +8,10 @@
   font-family: "Montserrat";
   padding: 16px 24px;
   font-size: 16px;
-  background-color: var(--color-title-episode);
+  background-color: #daf836;
   border-radius: 100px;
   border: 1.5px solid black;
   color: black;
-  line-height: 18px;
 }
 
 .episode-filter-label {
@@ -28,6 +27,7 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 80px;
+  flex-wrap: wrap;
 }
 
 .episode-filter-select {
@@ -58,11 +58,6 @@
   border: 2px solid var(--color-title-episode);
   border-radius: 18px;
   padding: 20px;
-  background-image: url("/src/images/season1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #0d171d;
   display: flex;
   flex-direction: column;
   gap: 106px;
@@ -196,4 +191,100 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#episode-item[data-season="S01"] {
+  background-color: #0d171d;
+  background-image: url("/src/images/season1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#episode-item[data-season="S02"] {
+  background-color: #0d171d;
+  background-image: url("/src/images/season2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#episode-item[data-season="S03"] {
+  background-color: #0d171d;
+  background-image: url("/src/images/season2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#episode-item[data-season="S04"] {
+  background-color: #0d171d;
+  background-image: url("/src/images/season2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#episode-item[data-season="S05"] {
+  background-color: #0d171d;
+  background-image: url("/src/images/season2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .episode-list {
+    gap: 32px;
+    width: 100%;
+  }
+
+  #episode-item {
+    width: 336px;
+    height: 250px;
+  }
+
+  .modal {
+    width: 460px;
+    height: 426px;
+  }
+
+  #modal-characters {
+    flex-wrap: wrap;
+    width: 400px;
+  }
+
+  .modal-character {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  #episode-filter {
+    align-items: baseline;
+    justify-content: left;
+  }
+
+  .episode-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filter-wrap {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .episode-filter-select {
+    width: 100%;
+  }
+
+  .modal {
+    width: 210px;
+    height: 626px;
+  }
+
+  #modal-characters {
+    width: 150px;
+  }
 }
