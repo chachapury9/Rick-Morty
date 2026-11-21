@@ -9,10 +9,14 @@ const BASE_URL = "https://rickandmortyapi.com/api/episode";
 const container = document.getElementById("episode-wrapper");
 const form = document.getElementById("episode-filter");
 const loadMoreBtn = document.getElementById("load-more-episodes");
+const episodeItem = document.getElementById("episode-item");
 
 getData(BASE_URL).then((data) => {
+  data.results.forEach((item) => {
+    item.episode = item.episode.slice(0, -3);
+    console.log(item);
+  });
   const createEpisode = Handlebars.compile(episode);
-
   const markUp = createEpisode(data);
   container.insertAdjacentHTML("beforeend", markUp);
 });
@@ -23,6 +27,10 @@ form.addEventListener("input", (e) => {
     container.innerHTML = "";
     getData(`${BASE_URL}?name=${form.episodeName.value}`)
       .then((data) => {
+        data.results.forEach((item) => {
+          item.episode = item.episode.slice(0, -3);
+          console.log(item);
+        });
         const createEpisode = Handlebars.compile(episode);
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
@@ -50,6 +58,10 @@ form.addEventListener("input", (e) => {
       `${BASE_URL}?episode=s0${form.season.value}&${form.episodeName.value}`,
     )
       .then((data) => {
+        data.results.forEach((item) => {
+          item.episode = item.episode.slice(0, -3);
+          console.log(item);
+        });
         const createEpisode = Handlebars.compile(episode);
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
@@ -72,6 +84,10 @@ function loadMore(event) {
 
   getData(`${BASE_URL}?page=${currentPage}`)
     .then((data) => {
+      data.results.forEach((item) => {
+        item.episode = item.episode.slice(0, -3);
+        console.log(item);
+      });
       const createEpisode = Handlebars.compile(episode);
       const markUp = createEpisode(data);
       container.insertAdjacentHTML("beforeend", markUp);
