@@ -1,3 +1,8 @@
+#episodes {
+  padding-top: 64px;
+  padding-bottom: 128px;
+}
+
 #episodeName {
   font-weight: 400;
   font-size: 14px;
