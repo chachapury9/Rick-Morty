@@ -1,4 +1,4 @@
-// import * as basicLightbox from "basiclightbox";
+import * as basicLightbox from "basiclightbox";
 
 export const modalSettings = basicLightbox.create(`<div class="modal">
     <div class="centered-modal">

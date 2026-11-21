@@ -1,0 +1,8 @@
+@import "./global/common.css";
+@import "./utils/variables.css";
+@import "./global/reset.css";
+@import "./global/base.css";
+@import "./global/container.css";
+
+@import "./components/episodes.css";
+@import "./components/footer.css";
