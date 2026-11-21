@@ -6,4 +6,5 @@
 
 /* наші стилі */
 @import "./components/header.css";
+@import "./components/header-episodes.css";
 @import "./components/footer.css";
