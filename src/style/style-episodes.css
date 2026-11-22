@@ -4,5 +4,6 @@
 @import "./global/base.css";
 @import "./global/container.css";
 
+@import "./components/header-episodes.css";
 @import "./components/episodes.css";
 @import "./components/footer.css";
