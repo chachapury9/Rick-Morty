@@ -1,3 +1,38 @@
+#character[data-image="rick"] {
+  width: 365px;
+  height: 579px;
+  padding: 32px 70px;
+  background-color: #a1d737;
+}
+
+#character[data-image="morty"] {
+  width: 428px;
+  height: 550px;
+  padding: 41px 42px;
+  background-color: #0d171d;
+}
+
+#character[data-image="summer"] {
+  width: 152px;
+  height: 560px;
+  padding: 43px 175px;
+  background-color: #daf836;
+}
+
+#character[data-image="beth"] {
+  width: 150px;
+  height: 537px;
+  padding: 53px 176px;
+  background-color: #a1d737;
+}
+
+#character[data-image="jerry"] {
+  width: 148px;
+  height: 537px;
+  padding: 53px 177px;
+  background-color: #0d171d;
+}
+
 .main-characters {
   margin-bottom: 128px;
   margin-top: 128px;
@@ -37,4 +72,83 @@
 
 #character.fade {
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .character-item {
+    box-sizing: border-box;
+  }
+
+  .character-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 101px;
+  }
+
+  #character {
+    box-sizing: border-box;
+    opacity: 1;
+    background-color: var(--color-title-episode);
+    border-radius: 100px;
+    transition: opacity 0.3s ease-out;
+  }
+
+  #character[data-image="rick"],
+  #character[data-image="morty"] {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 39px 154px;
+  }
+
+  #character[data-image="summer"],
+  #character[data-image="beth"],
+  #character[data-image="jerry"] {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 72px 276px;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-item {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .character-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 101px;
+  }
+
+  #character {
+    box-sizing: border-box;
+    opacity: 1;
+    background-color: var(--color-title-episode);
+    border-radius: 25px;
+    transition: opacity 0.3s ease-out;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  #character[data-image="rick"],
+  #character[data-image="morty"] {
+    width: 100%;
+    height: 100%;
+    padding: 32px 70px;
+  }
+
+  #character[data-image="summer"],
+  #character[data-image="beth"],
+  #character[data-image="jerry"] {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 20px 128px;
+  }
 }

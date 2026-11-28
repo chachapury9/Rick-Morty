@@ -1,6 +1,7 @@
 #episodes {
   padding-top: 64px;
   padding-bottom: 128px;
+  min-height: 100vh;
 }
 
 #episodeName {
@@ -262,9 +263,21 @@
   .modal-character {
     width: 160px;
   }
+
+  #episodes {
+    min-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
+  .error-title {
+    text-align: center;
+  }
+
+  #episodes {
+    min-width: 100%;
+  }
+
   #episode-filter {
     align-items: baseline;
     justify-content: left;
