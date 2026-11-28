@@ -6,7 +6,7 @@ import "basiclightbox/dist/basicLightbox.min.css";
 import * as basicLightbox from "basiclightbox";
 
 const BASE_URL = "https://rickandmortyapi.com/api/episode";
-const container = document.getElementById("episode-wrapper");
+const container = document.querySelector(".episode-list");
 const form = document.getElementById("episode-filter");
 const loadMoreBtn = document.getElementById("load-more-episodes");
 const episodeItem = document.getElementById("episode-item");
@@ -34,8 +34,10 @@ form.addEventListener("input", (e) => {
         const createEpisode = Handlebars.compile(episode);
         const markUp = createEpisode(data);
         container.innerHTML = markUp;
-        if (data.error) {
-          container.innerHTML = `<div class="centered-error">
+      })
+      .catch((error) => {
+        console.log(error);
+        container.innerHTML = `<div class="centered-error">
               <div class="error">
             <img
               class="error-img"
@@ -46,10 +48,6 @@ form.addEventListener("input", (e) => {
             <h2 class="error-title">Oops! Try looking for something else...</h2>
           </div>
         </div>`;
-        }
-      })
-      .catch((error) => {
-        console.log(error);
       });
   } else if (e.target.dataset.filter === "season") {
     e.preventDefault();

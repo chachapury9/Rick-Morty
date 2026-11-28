@@ -1,17 +1,14 @@
-<ul class="episode-list">
-  {{#each results}}
-    <li id="episode-item" data-id="{{id}}" data-season="{{episode}}">
-      <h2 class="episode-title">{{name}}</h2>
-      <div class="episode-info"><div class="episode-item-text-wrapper">
-          <p id="episode-label-text">Season</p>
-          <p id="episode-text">{{episode}}</p>
-        </div>
-        <div class="episode-item-text-wrapper">
-          <p id="episode-label-text">Air date</p>
-          <p id="episode-text">{{air_date}}</p>
-        </div>
+{{#each results}}
+  <li id="episode-item" data-id="{{id}}" data-season="{{episode}}">
+    <h2 class="episode-title">{{name}}</h2>
+    <div class="episode-info"><div class="episode-item-text-wrapper">
+        <p id="episode-label-text">Season</p>
+        <p id="episode-text">{{episode}}</p>
       </div>
-
-    </li>
-  {{/each}}
-</ul>
+      <div class="episode-item-text-wrapper">
+        <p id="episode-label-text">Air date</p>
+        <p id="episode-text">{{air_date}}</p>
+      </div>
+    </div>
+  </li>
+{{/each}}
