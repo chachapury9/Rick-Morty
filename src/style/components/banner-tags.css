@@ -1,0 +1,91 @@
+.tags-banner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: #fafafa;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.tags-banner__track {
+  position: relative;
+  width: 930px;
+  height: 150px;
+  margin: 0;
+}
+
+.tags-banner .tag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 62px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-family: Montserrat, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transform-origin: center;
+}
+
+.tags-banner .tag-justin {
+  top: 73px;
+  left: -29px;
+  width: 232px;
+  background: #a4dd32;
+  color: #0d181d;
+}
+
+.tags-banner .tag-superpower {
+  top: 45px;
+  left: 85px;
+  width: 225px;
+  height: 58px;
+  background: #0d181d;
+  color: #a4dd32;
+  transform: rotate(17deg);
+  z-index: 2;
+}
+
+.tags-banner .tag-creative {
+  top: 47px;
+  left: 338.32px;
+  width: 142px;
+  height: 56px;
+  background: #d5ff31;
+  color: #0d181d;
+  transform: rotate(132deg);
+  z-index: 3;
+}
+
+.tags-banner .tag-amazing {
+  top: 73px;
+  left: 416px;
+  width: 200px;
+  background: #a4dd32;
+  color: #0d181d;
+  transform: rotate(180deg);
+}
+
+.tags-banner .tag-rick {
+  top: 73px;
+  left: 619px;
+  width: 265px;
+  background: #0d181d;
+  color: #ffffff;
+}
+
+.tags-banner .tag-comics {
+  top: 41px;
+  left: 768px;
+  width: 135px;
+  height: 58px;
+  background: #d5ff31;
+  color: #0d181d;
+  transform: rotate(35deg);
+  z-index: 4;
+}
