@@ -54,6 +54,15 @@
   text-align: center;
 }
 
+.footer__mobile-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__social-list--mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .footer__page-link {
     font-size: 14px;
@@ -63,9 +72,27 @@
     font-size: 12px;
   }
 
+  .footer-logo {
+    max-width: 149px;
+    max-height: 107px;
+    margin-right: 42px;
+  }
+
   .footer__mobile-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .footer__social-list--desktop {
+    display: none;
+  }
+
+  .footer__social-list--mobile {
+    display: flex;
+  }
+
+  .footer__social-list {
+    gap: 12px;
   }
 }
