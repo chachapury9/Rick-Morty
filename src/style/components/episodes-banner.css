@@ -11,11 +11,35 @@
 .banner-list {
   display: flex;
   gap: 24px;
+  width: max-content;
+
+  animation: banner-scroll 25s linear infinite;
+  padding-bottom: 10px;
+  /* overflow: hidden; */
+}
+
+@keyframes banner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.banner {
+  overflow: hidden;
 }
 
 .episode {
   width: 278px;
   height: 314px;
+  transition: 0.3s ease;
+}
+
+.episode:hover {
+  transform: scale(1.05);
 }
 
 .episode-5 {
@@ -37,6 +61,7 @@
   border-radius: 35px;
   padding: 5px;
   transition: 0.3s ease;
+  border: 1px solid var(--color-title-episode);
 }
 
 .banner-span:hover {
@@ -57,10 +82,122 @@
   padding: 12px 24px;
   border-radius: 1000px;
   transition: 0.3s ease;
+  border: 1px solid var(--color-title-episode);
+  width: fit-content;
 }
 
 .banner-btn:hover {
   background-color: var(--color-background);
   border: 1px solid var(--color-text-primary);
   color: var(--color-text-primary);
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .eps-banner {
+    width: 100%;
+  }
+
+  .banner-container {
+    background-color: var(--color-background);
+    border-radius: 80px;
+    max-width: 1442px;
+    width: 100%;
+    height: 768px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .banner-info {
+    padding-left: 32px;
+  }
+
+  .banner {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .banner-list {
+    width: max-content;
+    gap: 24px;
+    margin-top: 64px;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .episode-4,
+  .episode-5 {
+    display: none;
+  }
+
+  .episode {
+    width: 278px;
+    height: 314px;
+  }
+
+  .banner-btn {
+    margin-right: 24px;
+    margin-top: 24px;
+    padding: 10px 20px;
+  }
+}
+
+/* PHONES */
+
+@media screen and (max-width: 767px) {
+  .eps-banner {
+    width: 100%;
+  }
+
+  .banner-container {
+    border-radius: 50px;
+    max-width: 1442px;
+    width: 100%;
+    height: 466px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .banner-info {
+    font-size: 28px;
+    line-height: 32px;
+    padding-top: 80px;
+    padding-left: 34px;
+  }
+
+  .banner {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .banner-list {
+    width: max-content;
+    gap: 16px;
+    margin-top: 40px;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .episode-4,
+  .episode-5 {
+    display: none;
+  }
+
+  .episode {
+    width: 200px;
+    height: 220px;
+  }
+
+  .banner-btn {
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
 }
