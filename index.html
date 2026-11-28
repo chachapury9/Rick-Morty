@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Rick and Mory - home</title><link rel=icon type=image/png href=document-icon.0de505e2.png><link rel=stylesheet href=Rick-Morty.a8971346.css><body>
+<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Rick and Mory - home</title><link rel=icon type=image/png href=document-icon.0de505e2.png><link rel=stylesheet href=Rick-Morty.b332a172.css><body>
     <header class=header>
   <div class="container header-container">
     <div class=header-div-btn>
-      <button class=header-btn>Episodes</button>
+      <a href=#episodes-main class=header-btn>Episodes</a>
     </div>
     <div class=header-info>
       <p class=header-description>
@@ -13,11 +13,14 @@
         <img class=header-img src=header-logo.2a8beeeb.png alt="Rick and Morty logo">
       </div>
     </div>
+    <div id=scroller>
+      <a href=#characters class=scroll-down><img class=btn-scroll src=scroller.af779a1c.png alt=scroller></a>
+    </div>
   </div>
 </header>
 
     <main>
-      <section class="container main-characters">
+      <section id=characters class="container main-characters">
   <h2 class=title><span>Main</span>characters</h2>
   <div class=character-wrap>
     <img src=rick.01349840.png alt="just Rick" id=character>
@@ -63,7 +66,7 @@
   </div>
 </section>
 
-      <section class=eps-banner>
+      <section id=episodes-main class=eps-banner>
   <div class=banner-container>
     <h3 class=banner-info>
       Ready to <span class=banner-span>explore</span> the crazy world of Rick
@@ -84,11 +87,26 @@
           <img class="episode episode-4" src=episode-4.d046eac7.png alt=episode-4>
         </li>
         <li class=banner-item>
-          <img class="episode episode-5" src=episode-5.baf35803.png alt=episode-5>
+          <img class="episode episode-5" src=episode-5.55338388.png alt=episode-5>
+        </li>
+        <li class=banner-item>
+          <img class="episode episode-1" src=episode-1.884cfd55.png alt=episode-1>
+        </li>
+        <li class=banner-item>
+          <img class="episode episode-2" src=episode-2.7c9dd208.png alt=episode-2>
+        </li>
+        <li class=banner-item>
+          <img class="episode episode-3" src=episode-3.a8a78a94.png alt=episode-3>
+        </li>
+        <li class=banner-item>
+          <img class="episode episode-4" src=episode-4.d046eac7.png alt=episode-4>
+        </li>
+        <li class=banner-item>
+          <img class="episode episode-5" src=episode-5.55338388.png alt=episode-5>
         </li>
       </ul>
     </div>
-    <button class=banner-btn>Episodes</button>
+    <a href=#episodes class=banner-btn>Episodes</a>
   </div>
 </section>
 
